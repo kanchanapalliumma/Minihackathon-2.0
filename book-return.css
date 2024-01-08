@@ -1,0 +1,47 @@
+body{
+    background-color: rgb(113, 111, 111);
+}
+.member-container{
+    margin: 80px 200px;
+}
+.form{
+    margin: 18px 2px;
+    padding: 15px 30px;
+    font-size: 25px;
+    padding-right: 400px;
+}
+label{
+    font-size: 25px;
+    color: white;
+}
+button{
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color:rgb(90, 177, 180);
+    margin-top: 25px;
+}
+#clear{
+    background-color: yellow;
+    margin-left: 20px;
+}
+h1{
+    color: white;
+    font-size: 60px;
+    margin-left: 100px;
+}
+input{
+    text-align: start;
+    padding-left: 2px;
+}
+a{
+    padding: 10px 18px;
+    background-color: green;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+}
+#returning{
+    padding-right:505px;
+    color: rgb(102, 101, 101);
+    font-size: 27px;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="members.css">
+</head>
+<body>
+    <div class="member-container">
+        <h1>Members Management</h1>
+        <div class="name-container">
+            <label for="name">Name</label><br>
+            <input type="text" id="name" class="form" placeholder="Please enter name">
+            <div id="alert-message-one"></div>
+        </div>
+        <div class="email-container">
+            <label for="mail" class="form-one">Email</label><br>
+            <input type="text" id="mail" class="form" placeholder="Please enter email">
+            <div id="alert-message-two"></div>
+        </div>
+        <div class="ph-container">
+            <label for="ph-no" class="form-one">Mobile Number</label><br>
+            <input type="text" id="ph-no" class="form" placeholder="Please enter mobile number">
+            <div id="alert-message-three"></div>
+        </div>
+        <!-- <button id="btn-btn" ><a href="memberlist.html" target="_blank">Add Members</a></button> -->
+        <button id="btn-btn" onclick="addbook()">Add member</button>
+        <button id="clear" onclick="Delete()">Delete</button>
+        </div>
+        <div class="java-div">
+            <table id="table-one">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile Number</th>
+                </tr>
+                </thead>
+                <tbody id="booklist">
+                </tbody>
+            </table>
+        </div>
+        <script src="members.js"></script>
+</body>
+</html>

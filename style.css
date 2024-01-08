@@ -1,0 +1,44 @@
+.unorderd-list{
+    color: green;
+    list-style: none;
+    display: flex;
+    margin-left:600px;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-decoration: none;
+}
+li{
+    justify-content: center;
+    padding: 40px;
+    font-size: 18px;
+}
+a{
+    text-decoration: none;
+    font-size: 30px;
+}
+a:hover{
+    color: rgb(235, 41, 41)
+}
+#welcome{
+    font-size: 50px;
+    text-align: center;
+    margin-top: 200px;
+}
+body{
+    background-image: url("https://t3.ftcdn.net/jpg/03/26/04/60/360_F_326046017_jHGB1tbXAT0KB732CuKvTXxxzqxy31wd.jpg");
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+h2{
+    font-size: 120px;
+    padding: 40px;
+    background-color:goldenrod;
+    display: inline;
+    border-radius: 50px;
+    margin-left: 700px;
+    margin-top: 1400px;
+}
+#welcome{
+    margin-top: 270px;
+}
