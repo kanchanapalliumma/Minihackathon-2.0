@@ -1,5 +1,6 @@
 function login(){
     EmailDisplay()
+    // window.location.href="index.html"
 }
 function EmailDisplay(){
     let inputvalue_three=document.getElementById("email").value.trim()
@@ -29,6 +30,7 @@ function EmailDisplay(){
                 displayMessage_four.innerHTML="Password must be alphanumeric,it have to include special characters,numbers.password must contain atleast 8 characters"
             }else{
                 displayMessage_four.innerHTML=""
+                window.location.href="index.html"
             }
         }
     }

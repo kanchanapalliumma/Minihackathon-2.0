@@ -17,7 +17,7 @@ label{
 button{
     padding: 10px 20px;
     font-size: 20px;
-    background-color: cadetblue;
+    background-color: rgb(98, 204, 208);
     margin-top: 25px;
     color: white;
 }
@@ -57,4 +57,23 @@ th,tr{
     color: rgb(5, 0, 0);
     font-size: 25px;
     padding: 10px;
+}
+td{
+    columns: black;
+}
+#delete{
+    background-color:rgb(223, 26, 26);
+}
+#saveChangesButton{
+    background-color: green;
+    /* margin-top: -30px; */
+}
+.div-container{
+    display: flex;
+    gap: 20px;
+}
+#exist-message{
+    font-size: 35px;
+    padding-top: 45px;
+    color:bisque
 }

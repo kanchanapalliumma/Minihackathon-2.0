@@ -1,0 +1,14 @@
+table{
+    margin-left: 140px;
+    /* border: 1px solid white; */
+}
+th,tr{
+    /* color: white; */
+    padding: 16px 100px;
+    font-size: 25px;
+    text-align: center;
+    border: 1px solid black;
+}
+td{
+    color: black;
+}

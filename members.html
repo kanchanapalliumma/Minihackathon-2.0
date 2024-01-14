@@ -24,9 +24,12 @@
             <input type="text" id="ph-no" class="form" placeholder="Please enter mobile number">
             <div id="alert-message-three"></div>
         </div>
+        <div class="div-container">
         <!-- <button id="btn-btn" ><a href="memberlist.html" target="_blank">Add Members</a></button> -->
-        <button id="btn-btn" onclick="addbook()">Add member</button>
-        <button id="clear" onclick="Delete()">Delete</button>
+            <button id="btn-btn" onclick="addbook()">Add member</button>
+            <div id="makechanges"></div>
+        </div>
+        <div id="exist-message"></div>
         </div>
         <div class="java-div">
             <table id="table-one">
@@ -35,6 +38,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Mobile Number</th>
+                    <th>Action</th>
                 </tr>
                 </thead>
                 <tbody id="booklist">

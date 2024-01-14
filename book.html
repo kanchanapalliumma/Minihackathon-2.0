@@ -11,27 +11,50 @@
         <h1>Books Management</h1>
         <div class="title">
             <label for="name">Book Title</label><br>
-            <input type="text" class="name form" placeholder="Please enter name">
+            <input type="text" class="name form" id="title-one" placeholder="Please enter name">
+            <div class="alert-message"></div>
         </div>
         <div class="Author-container">
             <label for="author" class="form-one">Author</label><br>
-            <input type="text" class="author form" placeholder="Please enter Author name">
+            <input type="text" class="author form" id="author-one" placeholder="Please enter Author name">
+            <div class="alert-message"></div>
         </div>
         <div class="Genre-container">
             <label for="genre" class="form-one">Genre</label><br>
-            <input type="text" class="genre form"placeholder="Please enter Genre">
+            <input type="text" class="genre form" id="genre-one" placeholder="Please enter Genre">
+            <div class="alert-message"></div>
         </div>
         <div class="Year-container">
             <label for="year" class="form-one">Year</label><br>
-            <input type="text" class="year form"placeholder="Please enter Year">
+            <input type="text" class="year form" id="year-one" placeholder="Please enter Year">
+            <div class="alert-message"></div>
         </div>
-        <div class="quantity-container">
-            <label for="qantity" class="form-one">Mobile Number</label><br>
-            <input type="text" class="qantity form"placeholder="Please enter mobile number">
+        <div class="BookId-container">
+            <label for="bookId" class="form-one">Book Id</label><br>
+            <input type="text" class="bookId form" id="bookid-one"placeholder="Please enter mobile number">
+            <div class="alert-message"></div>
         </div>
         <!-- <button id="btn-btn"type="submit" ><a href="memberlist.html" target="_blank">Add Book</a></button> -->
-        <button id="btn-btn">Add Book</button>
-        <button id="clear">Clear All</button>
+        <button id="btn-btn" onclick="Addbook()">Add Book</button>
+        <div id="changesbtn"></div>
+        <div id="bookexist"></div>
         </div>
+
+        <div class="table-container">
+            <table id="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile Number</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody id="tablebody">
+                </tbody>
+            </table>
+        </div>
+
+        <script src="book.js"></script>
 </body>
 </html>
