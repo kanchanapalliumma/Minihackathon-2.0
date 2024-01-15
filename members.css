@@ -21,10 +21,6 @@ button{
     margin-top: 25px;
     color: white;
 }
-#clear{
-    background-color: rgb(223, 26, 26);
-    margin-left: 20px;
-}
 h1{
     color: white;
     font-size: 60px;
@@ -43,7 +39,6 @@ a{
 }
 table{
     margin-left: 140px;
-    /* border: 1px solid white; */
 }
 th,tr{
     color: white;
@@ -66,7 +61,6 @@ td{
 }
 #saveChangesButton{
     background-color: green;
-    /* margin-top: -30px; */
 }
 .div-container{
     display: flex;

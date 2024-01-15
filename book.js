@@ -31,7 +31,7 @@ function Author(){
 }
 
 function Genre(){
-    let genre=document.getElementsByClassName("author")[0].value.trim()
+    let genre=document.getElementsByClassName("genre")[0].value.trim()
     let displayMessage=document.getElementsByClassName("alert-message")[2]
     let regex=/^[a-zA-Z][a-zA-Z\s]*$/
 
@@ -61,8 +61,7 @@ function Year(){
         return false;
     }else{
         displayMessage.textContent=""
-        // let Firstletter=Author.charAt(0)
-        if(!year.match(regex)){
+        if(!year.match(regex) || year.length>4){
             displayMessage.textContent="Invalid year"
             return false;
         }else{
@@ -84,10 +83,18 @@ function BookId(){
     }
 }
 
+function book(title,author,genre,year,bookId){
+    this.title=title
+    this.author=author
+    this.genre=genre
+    this.year=year
+    this.bookId=bookId
+}
+
 
 let defaultbooknames=[
     new book("To Kill a Mockingbird"," Harper Lee","Classic Fiction","1960","12f"),
-    new book("The Great Gatsby"," F. Scott Fitzgerald","Classic Fiction","1925"),
+    new book("The Great Gatsby"," F. Scott Fitzgerald","Classic Fiction","1925","67"),
 ]
 let library=defaultbooknames
 function Addbook(){
@@ -124,14 +131,11 @@ function Addbook(){
 }
 
 
-
-function book(title,author,genre,year,bookId){
-    this.title=title
-    this.author=author
-    this.genre=genre
-    this.year=year
-    this.bookId=bookId
+function Delete(i){
+    library.splice(i,1)
+    displaybook()
 }
+
 
 function displaybook(books){
     let tbody=document.getElementById("tablebody")
@@ -139,84 +143,82 @@ function displaybook(books){
     if(!books){
         books=library
     }
-    for(i=0;i<books.length;i++){
+    for(let i=1;i<books.length;i++){
         let tr=document.createElement("tr")
-        let title=document.createElement("td")
-        title.innerHTML=books[i].title
-        let authorname=document.createElement("td")
-        authorname.innerHTML=books[i].author
-        let genre_=document.createElement("td")
-        genre_.innerHTML=books[i].genre
-        let year_=document.createElement("td")
-        year_.innerHTML=books[i].year
-        let bookId_=document.createElement("td")
-        bookId_.innerHTML=books[i].bookId
+        let tdtitle=document.createElement("td")
+        tdtitle.innerHTML=books[i].title
+        let tdauthorname=document.createElement("td")
+        tdauthorname.innerHTML=books[i].author
+        let tdgenre=document.createElement("td")
+        tdgenre.innerHTML=books[i].mobile_no
+        let tdyear=document.createElement("td")
+        tdyear.innerHTML=books[i].year
+        let tdbookid=document.createElement("td")
+        tdbookid.innerHTML=books[i].year
+        let tddelete=document.createElement("td")
         let button=document.createElement("button")
-        button.innerHTML="ClearAll"
-        let clearbtn=document.createElement("td")
+        button.innerHTML="Delete"
         button.addEventListener("click",function(){
             Delete(i)
         })
-        clearbtn.appendChild(button)
-        let editbutton=document.createElement("td")
+        button.setAttribute("id","delete")
+        button.style.marginTop="-18px"
+        button.style.marginBottom="10px"
+        button.style.borderRadius="8px"
+        tddelete.appendChild(button)
+        let tdedit=document.createElement("td") 
         let edit=document.createElement("button")
         edit.innerHTML="Edit"
+        edit.style.marginTop="-18px"
+        edit.style.marginBottom="10px"
+        edit.style.borderRadius="8px"
         edit.addEventListener("click",function(){
             Edit(i)
         })
-        editbutton.appendChild(edit)
+        tdedit.appendChild(edit)
 
-        tr.appendChild(title)
-        tr.appendChild(authorname)
-        tr.appendChild(genre_)
-        tr.appendChild(year_)
-        tr.appendChild(bookId_)
-        tr.appendChild(clearbtn)
-        tr.appendChild(editbutton)
+        tr.appendChild(tdtitle)
+        tr.appendChild(tdauthorname)
+        tr.appendChild(tdgenre)
+        tr.appendChild(tdyear)
+        tr.appendChild(tddelete)
+        tr.appendChild(tdedit)
 
         tbody.appendChild(tr)
     }
 }
 
 
-function Delete(i){
-    library.splice(i,1)
-    displaybook()
-}
 
-function Edit(i) {
-    console.log(i)
-    let title_ = document.getElementById("title-one");
-    let author = document.getElementById("author-one");
-    let genre = document.getElementById("genre-one")
-    let year = document.getElementById("year-one")
-    let bookId = document.getElementById("bookid-one")
-    console.log(library.length)
+function Edit(i){
+    let title_=document.getElementById("title-one")
+    let author=document.getElementById("author-one")
+    let genre=document.getElementById("genre-one")
+    let year=document.getElementById("year-one")
+    let bookId=document.getElementById("bookid-one")
+    
+    title_.value = library[i].title;
+    author.value = library[i].author;
+    genre.value = library[i].genre;
+    year.value = library[i].year
+    bookId.value =library[i].bookId
+    let buttonsave=document.createElement("button")
+    buttonsave.innerHTML="Save Changes"
+    // buttonsave.style.marginTop="-18px"
+    buttonsave.addEventListener("click",function(){
+        library[i].title=title_.value
+        library[i].author=author.value
+        library[i].genre=genre.value
+        library[i].year=year.value
+        library[i].bookId=bookId.value
+        displaybook()
 
-    title_.value=library[i].title
-    author.value=library[i].author
-    genre.value=library[i].genre
-    year.value=library[i].year
-    bookId.value=library[i].bookId
-
-
-    let savebutton = document.createElement("button");
-    savebutton.innerHTML = "Save Changes";
-    savebutton.addEventListener("click", function () {
-        library[i].title = title_.value;
-        library[i].author = author.value;
-        library[i].genre = genre.value;
-        library[i].year = year.value;
-        library[i].bookId = bookId.value;
-        displaybook();
-
-        let existbook = document.getElementById("bookchange");
-        if (existbook) {
-            existbook.parentNode.removeChild(existbook);
+        let existingButton = document.getElementById("saveChangesButton");
+        if (existingButton) {
+            existingButton.parentNode.removeChild(existingButton);
         }
-        savebutton.setAttribute("id", "bookchange");
-        document.getElementById("changesbtn").appendChild(savebutton);
-
-    });
+    })
+    buttonsave.setAttribute("id", "saveChangesButton");
+    document.getElementById("changesbtn").appendChild(buttonsave)
+    // document.body.appendChild(buttonsave);
 }
-

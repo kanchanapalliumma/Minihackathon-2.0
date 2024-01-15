@@ -1,6 +1,6 @@
 function login(){
     EmailDisplay()
-    // window.location.href="index.html"
+    Password()
 }
 function EmailDisplay(){
     let inputvalue_three=document.getElementById("email").value.trim()

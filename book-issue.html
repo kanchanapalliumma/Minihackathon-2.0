@@ -11,23 +11,49 @@
         <h1>Book Issuing</h1>
         <div class="id-container">
             <label for="id">BookId</label><br>
-            <input type="text" class="id form" placeholder="Please enter bookid">
+            <input type="text" class="id form" placeholder="Please enter book Id">
+            <div class="alert-message"></div>
         </div>
         <div class="user-container">
             <label for="user" class="form-one">UserId</label><br>
-            <input type="text" class="user form" placeholder="Please enter UserId">
+            <input type="text" class="user form" placeholder="Please enter User Id">
+            <div class="alert-message"></div>
         </div>
         <div class="period-container">
             <label for="period" class="form-one">period</label><br>
             <input type="text" class="period form"placeholder="Please enter period of time">
+            <div class="alert-message"></div>
         </div>
         <div class="date-container">
-            <label for="class" class="form-one">Issuing Date</label><br>
-            <input type="date" class="class form"placeholder="Please select date">
+            <label for="date" class="form-one">Issuing Date</label><br>
+            <input type="date" class="date form"placeholder="Please select date">
+            <div class="alert-message"></div>
         </div>
+        <div class="button-container">
         <!-- <button id="btn-btn" type="submit"><a href="memberlist.html" target="_blank">Add Members</a></button> -->
-        <button id="btn-btn" type="submit">Book Issuing</button>
+            <button id="btn-btn" type="submit" onclick="issue()">Book Issuing</button>
+            <div id="makechanges"></div>
         </div>
+        <div id="exist-message"></div>
+        </div>
+
+        
+        <div class="table-container">
+            <table id="table">
+                <thead>
+                <tr>
+                    <th>Book Id</th>
+                    <th>User Id</th>
+                    <th>Period of time</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody id="tablebody">
+                </tbody>
+            </table>
+        </div>
+        <script src="book-issue.js"></script>
     
 </body>
 </html>

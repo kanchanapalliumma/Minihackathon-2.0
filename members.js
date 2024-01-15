@@ -3,7 +3,6 @@ function user(name,email,mobile_no){
     this.name=name
     this.email=email
     this.mobile_no=mobile_no
-    // this.sl_no=sl_no
 }
 let defaultuser =[
 new user("Uma","uma@gmail.com","6309117890"),
@@ -38,13 +37,14 @@ function addbook(){
             document.getElementById("exist-message").textContent="User already exists"
         }
     }
-    // window.location.href="memberslist.html"
 }
+
 
 function Delete(i){
     library.splice(i,1)
     Displayuser()
 }
+
 
 function Edit(i){
     let names=document.getElementById("name")
@@ -56,7 +56,6 @@ function Edit(i){
     phno.value = library[i].mobile_no
     let buttonsave=document.createElement("button")
     buttonsave.innerHTML="Save Changes"
-    // buttonsave.style.marginTop="-18px"
     buttonsave.addEventListener("click",function(){
         library[i].name=names.value
         library[i].email=mail.value
@@ -70,10 +69,10 @@ function Edit(i){
     })
     buttonsave.setAttribute("id", "saveChangesButton");
     document.getElementById("makechanges").appendChild(buttonsave)
-    // document.body.appendChild(buttonsave);
 }
 
-    // Displayuser()
+
+
 function Displayuser(books){
     let tbody=document.getElementById("booklist")
     tbody.textContent=""
@@ -90,13 +89,13 @@ function Displayuser(books){
         tdno.innerHTML=books[i].mobile_no
         tdno.style.color="white"
         let tddelete=document.createElement("td")
-        // num.innerHTML=i
         let button=document.createElement("button")
         button.innerHTML="Delete"
+
         button.addEventListener("click",function(){
             Delete(i)
         })
-        // num.style.padding="8px 15px"
+
         button.setAttribute("id","delete")
         button.style.marginTop="-18px"
         tddelete.appendChild(button)
@@ -104,10 +103,10 @@ function Displayuser(books){
         let edit=document.createElement("button")
         edit.innerHTML="Edit"
         edit.style.marginTop="-18px"
+        edit.style.marginBottom="10px"
         edit.addEventListener("click",function(){
             Edit(i)
         })
-        // savebtn.appendChild(changesbtn)
         tdedit.appendChild(edit)
 
         tr.appendChild(tdname)
@@ -115,7 +114,6 @@ function Displayuser(books){
         tr.appendChild(tdno)
         tr.appendChild(tddelete)
         tr.appendChild(tdedit)
-        // tr.appendChild(savebtn)
 
         tbody.appendChild(tr)
     }
@@ -142,7 +140,7 @@ function EmailDisplay(){
 function NameDisplay(){
     let inputvalue=document.getElementById("name").value
     let displayMessage=document.getElementById("alert-message-one")
-    let regex=/^[a-zA-Z][a-zA-Z0-9]*$/;
+    let regex=/^[a-zA-Z' -]+$/;
     if (inputvalue===""){
         displayMessage.textContent="Please enter name"
         return false;
@@ -158,6 +156,8 @@ function NameDisplay(){
         }
     }
 }
+
+
 function NumberDisplay(){
     let inputvalue_two=document.getElementById("ph-no").value
     let displayMessage_two=document.getElementById("alert-message-three")

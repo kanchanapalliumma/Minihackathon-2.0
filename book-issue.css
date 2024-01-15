@@ -20,10 +20,6 @@ button{
     background-color:cadetblue;
     margin-top: 25px;
 }
-#clear{
-    background-color: yellow;
-    margin-left: 20px;
-}
 h1{
     color: white;
     font-size: 60px;
@@ -39,4 +35,39 @@ a{
     text-decoration: none;
     font-size: 25px;
     color: white;
+}
+.class{
+    padding-right: 518px;
+}
+.alert-message{
+    color: rgb(5, 0, 0);
+    font-size: 25px;
+    padding: 10px;
+}
+table{
+    margin-left: 140px;
+}
+th,tr{
+    color: white;
+    padding: 16px 100px;
+    font-size: 25px;
+    text-align: center;
+}
+#exist-message{
+    font-size: 35px;
+    padding-top: 45px;
+    color:bisque
+}
+button{
+    color: white;
+}
+#saveChangesButton{
+    background-color: green;
+    margin-left: 12px;
+}
+.button-container{
+    display: flex;
+}
+.date{
+    padding-right: 519px;
 }

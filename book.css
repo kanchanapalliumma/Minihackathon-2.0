@@ -20,10 +20,6 @@ button{
     background-color: cadetblue;
     margin-top: 25px;
 }
-#clear{
-    background-color:rgb(230, 35, 35);
-    margin-left: 20px;
-}
 h1{
     color: white;
     font-size: 60px;
@@ -33,25 +29,27 @@ input{
     text-align: start;
     padding-left: 2px;
 }
-a{
-    padding: 10px 18px;
-    background-color: green;
-    text-decoration: none;
-    font-size: 25px;
-    color: white;
-}
 .alert-message{
     color: rgb(5, 0, 0);
     font-size: 25px;
     padding: 10px;
 }
 table{
-    margin-left: 140px;
-    /* border: 1px solid white; */
+    margin-left: 100px;
 }
 th,tr{
     color: white;
     padding: 16px 100px;
     font-size: 25px;
     text-align: center;
+}
+#delete{
+    background-color: rgb(226, 16, 16);
+}
+#saveChangesButton{
+    background-color: green;
+    margin-left: 15px;
+}
+.button-container{
+    display: flex;
 }
